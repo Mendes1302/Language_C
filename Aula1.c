@@ -1,7 +1,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-// Listas encadeadas
+// Listas encadeadas aula1
 struct node
 {
   int nData;
