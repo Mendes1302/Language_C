@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+//Criação ou definição da estrutura de uma lista
 typedef struct celulaLista{
   int inform;
   struct celulaLista * proxima;
@@ -16,7 +17,7 @@ int main(void) {
 
   pLista = (celula *)malloc(sizeof(struct celulaLista));
 
-  //inicializar a lista:
+  //Inicialização da lista.
   initLista(&pLista);
 
   for(;;){
