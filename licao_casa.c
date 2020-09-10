@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <conio.h>
 
 typedef struct Contatinho {
   char nome [40];
@@ -144,35 +143,40 @@ contatos* excluir(contatos *recebido){
 }
 
 int main(void) {
-  int escolha;
+  int escolha = 0;
   contatos * meusContatos;
   meusContatos = (contatos *) malloc(sizeof(struct Contatinho));
   meusContatos = NULL;
-  
-  printf("Escolha o que você fazer:\n[ 1 ] Inserir\n[ 2 ] Inserir em posicao x\n[ 3 ] Inserir no final\n[ 4 ] Excluir\n[ 5 ] Listar\n[ 6 ] Sair\n");
-  scanf("%d", &escolha);
-  
-  switch(escolha){
+  for (;;){
       
-    case 1:
-        inserir(&meusContatos);
-        break;
-    case 2:
-        inserirPosicao(&meusContatos);
-        break;
-    case 3:
-        inserirfinal(&meusContatos);
-        break;
-    case 4:
-        excluir(meusContatos);
-        break;
-    case 5:
-        listar(meusContatos);
-        break;
-    case 6:
-        exit(0);
-    
+      printf("Escolha o que você fazer:\n[ 1 ] Inserir\n[ 2 ] Inserir em posicao x\n[ 3 ] Inserir no final\n[ 4 ] Excluir\n[ 5 ] Listar\n[ 6 ] Sair\n");
+      scanf("%d", &escolha);
+      
+      switch(escolha){
+          
+          case 1:
+              meusContatos = inserir(meusContatos);
+              break;
+          case 2:
+              meusContatos = inserirPosicao(meusContatos);
+              break;
+          case 3:
+              meusContatos = inserirfinal(meusContatos);
+              break;
+          case 4:
+              meusContatos = excluir(meusContatos);
+              break;
+          case 5:
+              listar(meusContatos);
+              break;
+          case 6:
+              exit(0);
+          default:
+              printf("ERRO, Tente outra vez!!!!!");
+              break;
         
+            
+      }
   }
   return 0;
 }
