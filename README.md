@@ -1,2 +1,2 @@
 # Estrutura-de-dados
-Segundo semestre de Cien.Computação.
+Segundo semestre de Ciência da Computação, disciplina de Estrutura de dados.
