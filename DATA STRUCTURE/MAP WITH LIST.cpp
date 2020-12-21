@@ -27,11 +27,14 @@ int main()
             case 1:
                 printf("Nome do cliente:");
                 scanf("%s", &nome);
+			
                 printf("\nPlaca:");
                 scanf("%s", &placa);
+			
                 CARROS.nome = nome;
                 CARROS.placa = placa;
                 Carros[(Carros.size()+1)] = CARROS;
+			
                 opcao = 0;
                 break;
             case 2:
@@ -49,14 +52,16 @@ int main()
             case 3:
                 printf("\nNumero da placa para remover:");
                 scanf("%s", &placa);
+			
                 for(i=1; i <= Carros.size(); i++)
                 {
                     if(Carros.find(i)!=Carros.end())
                     {
-                        if(Carros[i].placa==placa) {
+                        if(Carros[i].placa==placa) 
+			{
                         	Carros.erase(Carros.find(i));
                         	printf("\nREMOVIDO COM SUCESSO!!\n");
-						}
+			}
                     }
                 }
 				
